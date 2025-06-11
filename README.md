@@ -43,9 +43,13 @@ It provides both a **command-line interface (CLI)** and a **Graphical User Inter
 
 ---
 
-## How to Run
+# 🛠️ Built With
 
-###  CLI Version
-```bash
-python password_checker.py
+Python 3.x
 
+Tkinter (for GUI)
+
+Regular Expressions (re module)
+
+# 📄 License
+This project is free to use for educational and non-commercial purposes.
