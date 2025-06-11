@@ -1,0 +1,26 @@
+document.getElementById('checkStrength').addEventListener('click', function() {
+    const password = document.getElementById('password').value;
+    const resultDiv = document.getElementById('strengthResult');
+    let strengthMessage = '';
+
+    if (password.length < 6) {
+        strengthMessage = 'Weak (Too short)';
+    } else {
+        let upperCase = /[A-Z]/.test(password);
+        let lowerCase = /[a-z]/.test(password);
+        let numbers = /\d/.test(password);
+        let specialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+        let criteriaMet = upperCase + lowerCase + numbers + specialChars;
+
+        if (criteriaMet === 4) {
+            strengthMessage = 'Strong';
+        } else if (criteriaMet === 3) {
+            strengthMessage = 'Medium';
+        } else {
+            strengthMessage = 'Weak';
+        }
+    }
+
+    resultDiv.textContent = 'Password Strength: ' + strengthMessage;
+});
